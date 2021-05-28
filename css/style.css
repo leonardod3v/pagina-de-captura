@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+}
+
+/*Irá aumentar somente até certo ponto */
+.container {
+    max-width: 1000px;
+    /*Centralizando o container*/
+    margin: auto;
+}
+
+header {
+    background-color: #48C5CE;
+    text-align: center;
+    color: white;
+}
+
+.title {
+    font-size: 26px;
+}
+
+section {
+    padding: 20px;
+    background-image: url('../images/people.jpg');
+    background-size: cover;
+    /*É necessário utilizar, pois a imagem não se ajusta com o float que está em .form-container*/
+    overflow: hidden;
+}
+
+.form-container {
+    max-width: 230px;
+    background-color: #ffffffbb;
+    padding: 20px;
+    float: right;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+.mb {
+    margin-bottom: 15px;
+}
+
+input, select {
+    /*Ocupa todo o espaço determinado (sem contar o padding)*/
+    width: 100%;
+    /*Fica ajustado ao espaço*/
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+/*Vão receber as alterações apenas os inputs que tiverem o tipo submit*/
+input[type="submit"] {
+    color: white;
+    background-color: #48C5CE;
+    font-weight: bold;
+}
+
+select {
+    /*Irá remover a seta de seleção padrão que os navegadores possuem, por definição própria*/
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    /*Inserindo a imagem de seta no lugar*/
+    background-image: url('../images/arrow.jpg');
+    /*Evita repetição da imagem*/
+    background-repeat: no-repeat;
+
+    /*Cálculo feito no eixo x (horizontal). 100%-10px irá alocar o item para a direita.
+    IMPORTANTE DAR ESPAÇO ENTRE OS VALORES E SINAIS*/
+    background-position-x: calc(100% - 10px);
+    /*Alinhando seta ao centro*/
+    background-position-y: center;
+
+    /*Também pode ser utilizado da seguinte forma:
+    background-position: calc(100% - 10px) center;*/
+}
+
+
+
+footer {
+    background-color: #202121;
+    padding: 40px;
+    text-align: center;
+}
+
+.picture {
+    width: 160px;
+}
+
+.description {
+    display: inline-block;
+    color: white;
+    text-align: left;
+    /*Limitando o tamanho, o elemento vai para o lado da imagem*/
+    max-width: 40%;
+    margin-left: 40px;
+}
+
+.description p, .description h3 {
+    margin-bottom: 20px;
+}
+
+.description h3 {
+    font-size: 24px;
+}
+
+/*USAR MEDIA QUERIES PARA AJUSTAR O CONTEÚDO QUANDO A TELA DIMINUIR*/
+
+@media only screen and (max-width: 600px) {
+
+    .title {
+        font-size: 20px;
+    }
+
+    .form-container {
+        max-width: 210px;
+        float: none;
+        margin: auto;    
+    }
+
+    /* RODAPÉ */
+
+    footer {
+        
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .picture {
+        width: 160px;
+        margin-bottom: 15%;
+        
+    }
+    
+    .description {
+        display: inline-block;
+        color: white;
+        text-align: left;
+        /*Limitando o tamanho, o elemento vai para o lado da imagem*/
+        max-width: 40%;
+        margin-left: 25px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 450px) {
+
+    .title {
+        font-size: 18px;
+    }
+
+    .form-container {
+        max-width: 180px;
+        float: none;
+        margin: auto;    
+    }
+
+    /* RODAPÉ */
+
+    footer {
+        
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .picture {
+        width: 145px;
+        margin-bottom: 42%;
+        
+    }
+    
+    .description {
+        
+        /*Limitando o tamanho, o elemento vai para o lado da imagem*/
+        max-width: 40%;
+        margin-left: 25px;
+    }  
+}
+
+@media only screen and (max-width: 330px) {
+
+    footer {
+        text-align: center;
+    }
+
+    .description {
+        display: block;
+        margin: auto;
+        margin-top: -30%;
+        max-width: 50%;
+        text-align:left;
+    }
+
+}
